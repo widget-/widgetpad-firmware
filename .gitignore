@@ -1,0 +1,19 @@
+# build
+.vsteensy/**
+.vscode/**
+makefile
+
+# dependency files
+*.d
+
+# output and binaries
+build/**
+*.slo
+*.lo
+*.o
+*.obj
+*.hex
+*.lst
+*.elf
+*.a
+

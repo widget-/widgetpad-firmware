@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.gcode": "genericgcodeiso",
+        "arduino.h": "c"
+    }
+}
