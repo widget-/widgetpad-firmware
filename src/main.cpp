@@ -1,12 +1,17 @@
 #include "Arduino.h"
+#include "stdint.h"
 
-void setup()
-{
-  pinMode(LED_BUILTIN,OUTPUT);
+#include "config.h"
+
+#include "serial.h"
+#include "pad.h"
+
+void setup() {
+  setupSteps();
+  setupSerial();
 }
 
-void loop()
-{
-  digitalWriteFast(LED_BUILTIN,!digitalReadFast(LED_BUILTIN));
-  delay(500);
+void loop() {
+  tickSteps();
+  tickSerial();
 }

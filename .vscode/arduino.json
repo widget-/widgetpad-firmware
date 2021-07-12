@@ -1,6 +1,5 @@
 {
     "board": "arduino:avr:leonardo",
-    "sketch": "bttp-firmware.ino",
     "port": "COM10",
     "output": "./build"
 }
