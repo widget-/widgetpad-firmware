@@ -50,4 +50,6 @@ Panel PANELS[] = {
 #define LED_COUNT LEDS_PER_PAD*len(PANELS)
 #define NUM_STEPS (sizeof PANELS / sizeof PANELS[0])
 
+#define ANALOGREAD_SMOOTHING_SAMPLES 10
+
 #endif
