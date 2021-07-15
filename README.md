@@ -15,8 +15,7 @@ See [LICENSE](LICENSE) for full terms.
 
 ## Requirements
 
-This firmware is currently for the Teensy 3.2, but will be updated for
-the [Teensy 4.0](https://www.pjrc.com/store/teensy40.html).
+This firmware is for the Teensy [Teensy 4.0](https://www.pjrc.com/store/teensy40.html).
 
 The following software is needed to build the firmware:
 

@@ -4,18 +4,18 @@
       "name": "VisualTeensy",
       "includePath": [
         "src/**",
-        "C:/Program Files (x86)/Arduino/hardware/teensy/avr/cores/teensy3",
+        "C:/Program Files (x86)/Arduino/hardware/teensy/avr/cores/teensy4",
+        "lib/EEPROM/**",
         "lib/FastLED/**",
         "lib/SPI/**",
-        "lib/WS2812Serial/**",
-        "lib/EEPROM/**"
+        "lib/WS2812Serial/**"
       ],
       "forcedInclude": [],
       "defines": [
-        "__MK20DX256__",
+        "__IMXRT1062__",
         "TEENSYDUINO=153",
-        "ARDUINO_TEENSY32",
-        "F_CPU=96000000",
+        "ARDUINO_TEENSY40",
+        "F_CPU=600000000",
         "USB_SERIAL_HID",
         "LAYOUT_US_ENGLISH",
         "ARDUINO=10813"
