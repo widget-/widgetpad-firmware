@@ -63,6 +63,12 @@ void storeEeprom() {
     EEPROM.put(0, eeprom);
 }
 
+void clearEeprom() {
+    for (uint8_t i = 0; i < sizeof(EepromStructure); i++) {
+        EEPROM.update(i, 0);
+    }
+}
+
 void setupEeprom() {
     loadEeprom();
 }

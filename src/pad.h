@@ -43,8 +43,11 @@ void setupSteps() {
 void tickSteps() {
   for (uint8_t step = 0; step < NUMBER_OF_PANELS; step++) {
     PANELS[step].value = handleInput(step, analogRead(PANELS[step].teensyPin));
-    PANELS[step].pressed = (PANELS[step].value > PANELS[step].threshold);
-    Joystick.button(PANELS[step].gamepadButton, PANELS[step].pressed);
+    bool pressed = PANELS[step].value > PANELS[step].threshold;
+    if (PANELS[step].pressed != pressed) {
+      PANELS[step].pressed = pressed;
+      Joystick.button(PANELS[step].gamepadButton, PANELS[step].pressed);
+    }
   }
   smooth_input_position = (smooth_input_position + 1) % ANALOGREAD_SMOOTHING_SAMPLES;
   Joystick.send_now();

@@ -59,6 +59,11 @@ void loadFromEeprom() {
   printThresholds();
 }
 
+void resetEeprom() {
+  clearEeprom();
+  Serial.print("c ok\n");
+}
+
 void writeThreshold(size_t bytes_read) {
   if (bytes_read < 3) return;
 
@@ -77,6 +82,9 @@ void tickSerial() {
     if (bytesRead == 0) return;
 
     switch (read_buffer[0]) {
+    case 'c':
+      resetEeprom();
+      break;
     case 'f':
       printFps();
       break;

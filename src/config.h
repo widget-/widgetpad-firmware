@@ -36,13 +36,13 @@ Panel PANELS[] = {
         A2,  // teensyPin
         0    // ledOrder
     }, { // Down arrow
-        200, // threshold
+        150, // threshold
         2,   // stepOrder
         3,   // gamepadButton
         A1,  // teensyPin
         2    // ledOrder
     }, { // Right arrow
-        200, // threshold
+        150, // threshold
         1,   // stepOrder
         4,   // gamepadButton
         A0,  // teensyPin
