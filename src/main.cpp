@@ -5,8 +5,10 @@
 
 #include "serial.h"
 #include "pad.h"
+#include "eeprom_save.h"
 
 void setup() {
+  setupEeprom();
   setupSteps();
   setupSerial();
 }

@@ -2,6 +2,7 @@
 #define WP_SERIAL
 
 #include "config.h"
+#include "eeprom_save.h"
 
 #define BUFFER_SIZE 256
 char read_buffer[BUFFER_SIZE];
@@ -20,7 +21,7 @@ void printFps() {
 
 void printThresholds() {
   Serial.print("t ");
-  for (uint8_t panel = 0; panel < NUM_STEPS; panel++) {
+  for (uint8_t panel = 0; panel < NUMBER_OF_PANELS; panel++) {
     Serial.print(PANELS[panel].threshold);
     Serial.print(' ');
   }
@@ -29,11 +30,25 @@ void printThresholds() {
 
 void printValues() {
   Serial.print("v ");
-  for (uint8_t panel = 0; panel < NUM_STEPS; panel++) {
+  for (uint8_t panel = 0; panel < NUMBER_OF_PANELS; panel++) {
     Serial.print(PANELS[panel].value);
     Serial.print(' ');
   }
   Serial.print('\n');
+}
+
+void saveToEeprom() {
+  storeEeprom();
+  Serial.print("s ok\n");
+}
+
+void loadFromEeprom() {
+  if (loadEeprom()) {
+    Serial.print("l ok\n");
+  } else {
+    Serial.print("l failed\n");
+  }
+  printThresholds();
 }
 
 void writeThreshold(size_t bytes_read) {
@@ -48,14 +63,20 @@ void tickSerial() {
   frames++;
 
   while (Serial.available() > 0) {
-    size_t bytes_read = Serial.readBytesUntil('\n', read_buffer, BUFFER_SIZE - 1);
-    read_buffer[bytes_read] = '\0';
+    size_t bytesRead = Serial.readBytesUntil('\n', read_buffer, BUFFER_SIZE - 1);
+    read_buffer[bytesRead] = '\0';
 
-    if (bytes_read == 0) return;
+    if (bytesRead == 0) return;
 
     switch (read_buffer[0]) {
     case 'f':
       printFps();
+      break;
+    case 'l':
+      loadFromEeprom();
+      break;
+    case 's':
+      saveToEeprom();
       break;
     case 't':
       printThresholds();
@@ -64,7 +85,7 @@ void tickSerial() {
       printValues();
       break;
     case 'T':
-      writeThreshold(bytes_read);
+      writeThreshold(bytesRead);
       break;
     }
   }

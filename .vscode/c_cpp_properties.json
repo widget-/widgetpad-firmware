@@ -5,10 +5,10 @@
       "includePath": [
         "src/**",
         "C:/Program Files (x86)/Arduino/hardware/teensy/avr/cores/teensy4",
-        "lib/EEPROM/**",
         "lib/FastLED/**",
         "lib/SPI/**",
-        "lib/WS2812Serial/**"
+        "lib/WS2812Serial/**",
+        "lib/EEPROM/**"
       ],
       "forcedInclude": [],
       "defines": [
