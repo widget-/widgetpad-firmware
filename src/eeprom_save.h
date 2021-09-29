@@ -9,6 +9,8 @@
 #ifndef WP_EEPROM
 #define WP_EEPROM
 
+#include "Arduino.h"
+#include "stdint.h"
 #include "EEPROM.h"
 
 #include "config.h"

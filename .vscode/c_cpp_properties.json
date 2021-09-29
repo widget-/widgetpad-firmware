@@ -1,29 +1,30 @@
 {
-  "configurations": [
-    {
-      "name": "VisualTeensy",
-      "includePath": [
-        "src/**",
-        "C:/Program Files (x86)/Arduino/hardware/teensy/avr/cores/teensy4",
-        "lib/FastLED/**",
-        "lib/SPI/**",
-        "lib/WS2812Serial/**",
-        "lib/EEPROM/**"
-      ],
-      "forcedInclude": [],
-      "defines": [
-        "__IMXRT1062__",
-        "TEENSYDUINO=153",
-        "ARDUINO_TEENSY40",
-        "F_CPU=600000000",
-        "USB_SERIAL_HID",
-        "LAYOUT_US_ENGLISH",
-        "ARDUINO=10813"
-      ],
-      "compilerPath": "C:/PROGRA~2/Arduino/hardware/tools/arm/bin/arm-none-eabi-gcc.exe",
-      "intelliSenseMode": "gcc-arm",
-      "cppStandard": "gnu++14"
-    }
-  ],
-  "version": 4
+    "configurations": [
+        {
+            "name": "VisualTeensy",
+            "includePath": [
+                "src/**",
+                "C:/Program Files (x86)/Arduino/hardware/teensy/avr/cores/teensy4",
+                "lib/FastLED/**",
+                "lib/SPI/**",
+                "lib/WS2812Serial/**",
+                "lib/EEPROM/**",
+                "C:/Program Files (x86)/Arduino/hardware/teensy/avr/cores/teensy4/avr"
+            ],
+            "forcedInclude": [],
+            "defines": [
+                "__IMXRT1062__",
+                "TEENSYDUINO=153",
+                "ARDUINO_TEENSY40",
+                "F_CPU=600000000",
+                "USB_SERIAL_HID",
+                "LAYOUT_US_ENGLISH",
+                "ARDUINO=10813"
+            ],
+            "compilerPath": "C:/PROGRA~2/Arduino/hardware/tools/arm/bin/arm-none-eabi-gcc.exe",
+            "intelliSenseMode": "gcc-arm",
+            "cppStandard": "gnu++14"
+        }
+    ],
+    "version": 4
 }

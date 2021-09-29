@@ -9,6 +9,9 @@
 #ifndef WP_SERIAL
 #define WP_SERIAL
 
+#include "Arduino.h"
+#include "stdint.h"
+
 #include "config.h"
 #include "eeprom_save.h"
 
@@ -31,6 +34,15 @@ void printThresholds() {
   Serial.print("t ");
   for (uint8_t panel = 0; panel < NUMBER_OF_PANELS; panel++) {
     Serial.print(PANELS[panel].threshold);
+    Serial.print(' ');
+  }
+  Serial.print('\n');
+}
+
+void printButtons() {
+  Serial.print("b ");
+  for (uint8_t button = 0; button < NUMBER_OF_BUTTONS; button++) {
+    Serial.print(BUTTONS[button].pressed ? "1" : "0");
     Serial.print(' ');
   }
   Serial.print('\n');
@@ -82,6 +94,9 @@ void tickSerial() {
     if (bytesRead == 0) return;
 
     switch (read_buffer[0]) {
+    case 'b':
+      printButtons();
+      break;
     case 'c':
       resetEeprom();
       break;
