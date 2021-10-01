@@ -6,7 +6,7 @@
         "kind": "build",
         "isDefault": true
       },
-      "command": "D:/Win10 the Third/Downloads/VisualTeensy_v1_0_0_0/make.exe",
+      "command": "C:/Users/Widget/bin/Visual Teensy/make.exe",
       "args": [
         "all",
         "-j",
@@ -19,7 +19,7 @@
         "kind": "build",
         "isDefault": true
       },
-      "command": "D:/Win10 the Third/Downloads/VisualTeensy_v1_0_0_0/make.exe",
+      "command": "C:/Users/Widget/bin/Visual Teensy/make.exe",
       "args": [
         "clean"
       ]
@@ -30,7 +30,7 @@
         "kind": "build",
         "isDefault": true
       },
-      "command": "D:/Win10 the Third/Downloads/VisualTeensy_v1_0_0_0/make.exe",
+      "command": "C:/Users/Widget/bin/Visual Teensy/make.exe",
       "args": [
         "upload",
         "-j",
@@ -43,22 +43,9 @@
         "kind": "build",
         "isDefault": true
       },
-      "command": "D:/Win10 the Third/Downloads/VisualTeensy_v1_0_0_0/make.exe",
+      "command": "C:/Users/Widget/bin/Visual Teensy/make.exe",
       "args": [
         "uploadTy",
-        "-j",
-        "-Otarget"
-      ]
-    },
-    {
-      "label": "Upload (CLI)",
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "command": "D:/Win10 the Third/Downloads/VisualTeensy_v1_0_0_0/make.exe",
-      "args": [
-        "uploadCLI",
         "-j",
         "-Otarget"
       ]
