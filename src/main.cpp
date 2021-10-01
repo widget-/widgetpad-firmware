@@ -7,13 +7,13 @@
 */
 
 #include "Arduino.h"
-#include "stdint.h"
+#include <cstdint>
 
-#include "config.h"
+#include "config.hpp"
 
-#include "serial.h"
-#include "pad.h"
-#include "eeprom_save.h"
+#include "serial.hpp"
+#include "pad.hpp"
+#include "eeprom_save.hpp"
 
 void setup() {
   setupEeprom();

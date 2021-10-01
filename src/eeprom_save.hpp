@@ -9,11 +9,11 @@
 #ifndef WP_EEPROM
 #define WP_EEPROM
 
+#include <stdint.h>
 #include "Arduino.h"
-#include "stdint.h"
 #include "EEPROM.h"
 
-#include "config.h"
+#include "config.hpp"
 
 #define CONFIG_VERSION 1
 
@@ -42,17 +42,16 @@ struct EepromStructure {
 };
 
 bool loadEeprom() {
-    EepromStructure eeprom;
-    EEPROM.get(0, eeprom);
-    if (eeprom.configVersion == CONFIG_VERSION &&
-        eeprom.numberOfPanels == NUMBER_OF_PANELS){
-        for (uint8_t i = 0; i < NUMBER_OF_PANELS; i++) {
-            PANELS[i] = eeprom.panels[i];
-        }
-        return true;
-    } else {
-        return false;
-    }
+    // EepromStructure eeprom;
+    // EEPROM.get(0, eeprom);
+    // if (eeprom.configVersion == CONFIG_VERSION &&
+    //     eeprom.numberOfPanels == NUMBER_OF_PANELS){
+    //     for (uint8_t i = 0; i < NUMBER_OF_PANELS; i++) {
+    //         PANELS[i] = eeprom.panels[i];
+    //     }
+    //     return true;
+    // }
+    return false;
 }
 
 void storeEeprom() {
