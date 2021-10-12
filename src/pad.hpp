@@ -15,11 +15,7 @@
 
 #include "config.hpp"
 #include "serial.hpp"
-// #include "status_led.h"
 
-// uint32_t smooth_input1[NUMBER_OF_PANELS][SENSORS_PER_PANEL][ANALOGREAD_SMOOTHING_SAMPLES] = {};
-// uint32_t smooth_input2[NUMBER_OF_PANELS][SENSORS_PER_PANEL][ANALOGREAD_SMOOTHING_SAMPLES] = {};
-// uint32_t smooth_input3[NUMBER_OF_PANELS][SENSORS_PER_PANEL][ANALOGREAD_SMOOTHING_SAMPLES] = {};
 uint8_t smooth_input_position = 0;
 
 #ifdef SPEAKER
@@ -29,7 +25,7 @@ uint8_t smooth_input_position = 0;
 
 bool sendJoystickUpdate = false;
 
-uint32_t smooth(uint32_t samples[]) {
+auto smooth(uint32_t samples[]) -> uint32_t {
   uint32_t sum = 0;
 
   for (uint8_t i = 0; i < ANALOGREAD_SMOOTHING_SAMPLES; i++) {
@@ -39,28 +35,10 @@ uint32_t smooth(uint32_t samples[]) {
   return sum / ANALOGREAD_SMOOTHING_SAMPLES;
 }
 
-// uint32_t handleInput(uint8_t panel, uint8_t sensor, uint32_t value) {
-//   smooth_input1[panel][sensor][smooth_input_position] = value;
-//   smooth_input2[panel][sensor][smooth_input_position] = smooth(smooth_input1[panel][sensor]);
-//   smooth_input3[panel][sensor][smooth_input_position] = smooth(smooth_input2[panel][sensor]);
-//   return smooth_input3[panel][sensor][smooth_input_position];
-// }
-
-uint32_t handleInput(Sensor &sensor, uint32_t value) {
+auto handleInput(Sensor &sensor, uint32_t value) -> uint32_t {
   sensor.smoothedSensorData[0][smooth_input_position] = value;
   sensor.smoothedSensorData[1][smooth_input_position] = smooth(sensor.smoothedSensorData[0]);
   sensor.smoothedSensorData[2][smooth_input_position] = smooth(sensor.smoothedSensorData[1]);
-
-  // for (int i = 0; i < 3; i++) {
-  //   Serial.print("Smoothed data ");
-  //   Serial.print(i);
-  //   Serial.print(": ");
-  //   for (uint32_t e : sensor.smoothedSensorData[i]) {
-  //     Serial.print(e);
-  //     Serial.print(", ");
-  //   }
-  //   Serial.println("");
-  // }
 
   return sensor.smoothedSensorData[2][smooth_input_position];
 }
@@ -118,20 +96,9 @@ void tickSteps() {
   #endif
 
   // panels
-
-
   for (Panel &panel : PANELS) {
-  // for (uint8_t panelIndex = 0; panelIndex < NUMBER_OF_PANELS; panelIndex++) {
-  //   Panel panel = PANELS[panelIndex];
     bool pressed = false;
     for (Sensor &sensor : panel.sensors) {
-    // for (int sensorIndex = 0; sensorIndex < SENSORS_PER_PANEL; sensorIndex++) {
-    //   Sensor sensor = panel.sensors[sensorIndex];
-      // sensor.value = handleInput(panelIndex, sensorIndex, analogRead(sensor.teensyPin));
-      // Serial.print("Value for sensor at teensy pin ");
-      // Serial.print(sensor.teensyPin);
-      // Serial.print(" is ");
-      // Serial.println(analogRead(sensor.teensyPin));
       sensor.value = handleInput(sensor, analogRead(sensor.teensyPin));
       uint32_t threshold = sensor.threshold - (panel.pressed ? PANEL_THRESHOLD_LIFT_GAP : 0);
 
@@ -177,8 +144,6 @@ void tickSteps() {
     sendJoystickUpdate = false;
   }
 
-  // serialDebugPanels();
-  // delay(1000);
   printValues();
 
   delay(1); // limit framerate to ~1000Hz

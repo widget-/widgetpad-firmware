@@ -9,7 +9,8 @@
 #ifndef WP_CONFIG
 #define WP_CONFIG
 
-#include "stdint.h"
+#include <cstdint>
+
 #include "Arduino.h"
 
 // #define JOYSTICK_SIZE 64 // override Teensy joystick
@@ -54,10 +55,10 @@ Panel PANELS[] = {
         false, // pressed
         {      // sensors
             {
-                150, // threshold
+                30, // threshold
                 A0   // teensyPin
             }, {
-                150, // threshold
+                30, // threshold
                 A1   // teensyPin
             }
         }
@@ -69,10 +70,10 @@ Panel PANELS[] = {
         false, // pressed
         {      // sensors
             {
-                150, // threshold
+                30, // threshold
                 A2   // teensyPin
             }, {
-                150, // threshold
+                30, // threshold
                 A3   // teensyPin
             }
         }
@@ -84,10 +85,10 @@ Panel PANELS[] = {
         false, // pressed
         {      // sensors
             {
-                150, // threshold
+                100, // threshold
                 A4   // teensyPin
             }, {
-                150, // threshold
+                100, // threshold
                 A5   // teensyPin
             }
         }
@@ -99,10 +100,10 @@ Panel PANELS[] = {
         false, // pressed
         {      // sensors
             {
-                150, // threshold
+                30, // threshold
                 A6   // teensyPin
             }, {
-                150, // threshold
+                30, // threshold
                 A7   // teensyPin
             }
         }
@@ -147,7 +148,7 @@ DigitalButton BUTTONS[] = {
 #define SPEAKER // uncomment if you have a speaker or buzzer wired up
 #define SPEAKER_PIN 3
 #define SPEAKER_CLICK_LENGTH 1
-#define SPEAKER_BUZZER // uncomment if speaker is a buzzer
+#define SPEAKER_BUZZER // uncomment if using a speaker instead of a buzzer
 #define SPEAKER_FREQUENCY 4000 // for non-buzzer speakers
 
 #endif

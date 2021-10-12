@@ -27,11 +27,21 @@
         "sstream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "array": "cpp",
+        "unordered_map": "cpp",
+        "vector": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "fstream": "cpp"
     },
     "search.exclude": {
         "**/*.code-search": true,
         "build/**": true,
         "lib/**": true
-    }
+    },
+    "cSpell.words": [
+        "Gamepad",
+        "pcst"
+    ]
 }

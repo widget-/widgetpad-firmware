@@ -10,28 +10,30 @@
 #define WP_SERIAL
 
 #include "Arduino.h"
-#include "stdint.h"
+#include <cstdint>
 
 #include <sstream>
 #include <iostream>
 #include <string>
+#include <array>
 
 #include "config.hpp"
 #include "eeprom_save.hpp"
+#include "util.hpp"
 
-#define BUFFER_SIZE 256
-char read_buffer[BUFFER_SIZE];
-char write_buffer[BUFFER_SIZE];
+#define READ_BUFFER_SIZE 256
 
 uint32_t frames = 0;
+size_t bytesRead;
 
 void setupSerial() {
   Serial.begin(SERIAL_BAUD_RATE);
 }
 
 void printFps() {
-  sprintf(write_buffer, "fps %f", (float)frames*1000.0/(float)millis());
-  Serial.println(write_buffer);
+  std::ostringstream output;
+  output << "fps " << (float)frames*1000.0/(float)millis();
+  Serial.println(output.str().c_str());
 }
 
 void printThresholds() {
@@ -66,17 +68,6 @@ void printValues() {
   }
   Serial.print('\n');
 }
-// void printValues() {
-//   Serial.print("v ");
-//   for (uint8_t panel = 0; panel < NUMBER_OF_PANELS; panel++) {
-//     for (uint8_t sensor = 0; sensor < SENSORS_PER_PANEL; sensor++) {
-//       Serial.print(PANELS[panel].sensors[sensor].value);
-//       Serial.print(' ');
-//     }
-//     Serial.print("; ");
-//   }
-//   Serial.print('\n');
-// }
 
 void serialDebugPanels() {
   std::ostringstream ret;
@@ -118,21 +109,24 @@ void resetEeprom() {
   Serial.print("c ok\n");
 }
 
-void writeThreshold(size_t bytes_read) {
-  if (bytes_read < 3) return;
+// void writeThreshold(char[] &read_buffer) {
+//   // if (bytes_read < 3) return;
 
-  // uint8_t index = read_buffer[2] - '0';
+//   // std::vector<std::string> data = tokenize(std::string(read_buffer), ' ');
 
-  // PANELS[index].threshold = atoi(read_buffer + 3);
-}
+//   // uint8_t index = read_buffer[2] - '0';
+
+//   // PANELS[index].threshold = atoi(read_buffer + 3);
+// }
 
 void tickSerial() {
   frames++;
 
   while (Serial.available() > 0) {
-    size_t bytesRead = Serial.readBytesUntil('\n', read_buffer, BUFFER_SIZE - 1);
+    char read_buffer[READ_BUFFER_SIZE];
+    bytesRead = Serial.readBytesUntil('\n', read_buffer, READ_BUFFER_SIZE - 1);
     read_buffer[bytesRead] = '\0';
-
+    
     if (bytesRead == 0) return;
 
     switch (read_buffer[0]) {
@@ -157,22 +151,11 @@ void tickSerial() {
     case 'v':
       printValues();
       break;
-    case 'T':
-      writeThreshold(bytesRead);
-      break;
+    // case 'T':
+    //   writeThreshold(read_buffer);
+    //   break;
     case 'd':
       serialDebugPanels();
-      break;
-    case 'a':
-      Serial.print("a ");
-      for (Panel panel : PANELS) {
-        for (Sensor sensor : panel.sensors) {
-          Serial.print(sensor.value);
-          Serial.print(" ");
-        }
-        Serial.print("; ");
-      }
-      Serial.println("");
       break;
     }
   }
