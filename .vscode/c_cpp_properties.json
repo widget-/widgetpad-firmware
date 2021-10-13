@@ -7,6 +7,7 @@
         "C:/Program Files (x86)/Arduino/hardware/teensy/avr/cores/teensy4",
         "lib/EEPROM/**",
         "lib/FastLED/**",
+        "lib/json/**",
         "lib/SPI/**",
         "lib/WS2812Serial/**"
       ],
