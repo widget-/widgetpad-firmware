@@ -4,7 +4,7 @@ Firmware for the [Widgetpad](https://github.com/widget-/widgetpad) dance pad
 for rhythm games such as [StepMania](https://github.com/stepmania/stepmania),
 Dance Dance Revolution, In The Groove, and Pump It Up.
 
-Additionally, it should work for any FSR-based pad such as Baidit's 
+Additionally, it should work for any FSR-based pad such as Bandit's 
 [Build This Travel Pad (BTTP)](https://www.youtube.com/watch?v=y6wGYLE0YI4),
 Teejusb's [teejusb-pad](https://github.com/teejusb/teejusb-pad), or my upcoming
 budgetpad, conceptually similar to an FSR-modded LTEK.
@@ -89,7 +89,7 @@ A `pad` is a whole device, for one player.
 
 It consists of (usually) four, five, or nine `panels`, each of which maps to an arrow in most dance rhythm games.
 
-Each `panel` will have one or more `sensors` to decide whether or not they are
+Each `panel` will have one or more `sensors` to decide whether they are
 `pressed` once a `threshold` is crossed. The `panel` will remain `pressed` until
 the `threshold` minus the `threshold gap` is crossed the other direction.
 
