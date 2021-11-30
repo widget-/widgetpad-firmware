@@ -19,7 +19,7 @@
 
 #include "config.hpp"
 #include "eeprom_save.hpp"
-#include "util.hpp"
+// #include "util.hpp"
 
 #define READ_BUFFER_SIZE 256
 

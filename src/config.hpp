@@ -56,10 +56,10 @@ Panel PANELS[] = {
         {      // sensors
             {
                 30, // threshold
-                A0   // teensyPin
+                A6   // teensyPin
             }, {
                 30, // threshold
-                A1   // teensyPin
+                A7   // teensyPin
             }
         }
     }, { // Up arrow
@@ -71,10 +71,10 @@ Panel PANELS[] = {
         {      // sensors
             {
                 30, // threshold
-                A2   // teensyPin
+                A0   // teensyPin
             }, {
                 30, // threshold
-                A3   // teensyPin
+                A1   // teensyPin
             }
         }
     }, { // Down arrow
@@ -86,10 +86,10 @@ Panel PANELS[] = {
         {      // sensors
             {
                 100, // threshold
-                A4   // teensyPin
+                A2   // teensyPin
             }, {
                 100, // threshold
-                A5   // teensyPin
+                A3   // teensyPin
             }
         }
     }, { // Right arrow
@@ -101,10 +101,10 @@ Panel PANELS[] = {
         {      // sensors
             {
                 30, // threshold
-                A6   // teensyPin
+                A4   // teensyPin
             }, {
                 30, // threshold
-                A7   // teensyPin
+                A5   // teensyPin
             }
         }
     }, 
