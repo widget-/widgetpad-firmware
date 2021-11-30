@@ -1,0 +1,27 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Cortex Debug - ATTACH",
+      "cwd": "${workspaceRoot}",
+      "executable": ".vsteensy/build/widgetpad-firmware.elf",
+      "request": "attach",
+      "type": "cortex-debug",
+      "servertype": "jlink",
+      "device": "MIMXRT1062xxx6A",
+      "svdFile": "xx4.svd",
+      "armToolchainPath": "C:\\PROGRA~2\\Arduino\\hardware\\tools\\arm\\bin"
+    },
+    {
+      "name": "Cortex Debug - LAUNCH",
+      "cwd": "${workspaceRoot}",
+      "executable": ".vsteensy/build/widgetpad-firmware.elf",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "jlink",
+      "device": "MIMXRT1062xxx6A",
+      "svdFile": "xx4.svd",
+      "armToolchainPath": "C:\\PROGRA~2\\Arduino\\hardware\\tools\\arm\\bin"
+    }
+  ]
+}
