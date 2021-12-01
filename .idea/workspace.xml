@@ -1,48 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated />
+    <generated>
+      <config projectName="widgetpad-firmware" targetName="Z_DUMMY_TARGET" />
+      <config projectName="widgetpad-firmware" targetName="Production" />
+      <config projectName="widgetpad-firmware" targetName="Debug" />
+    </generated>
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="teensy40-MinGW" ENABLED="true" CONFIG_NAME="teensy40" TOOLCHAIN_NAME="MinGW">
+        <ADDITIONAL_GENERATION_ENVIRONMENT>
+          <envs>
+            <env name="PATH" value="C:\Program Files\AdoptOpenJDK\jdk-11.0.10.9-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\tools\miniconda3;C:\tools\miniconda3\Library\mingw-w64\bin;C:\tools\miniconda3\Library\usr\bin;C:\tools\miniconda3\Library\bin;C:\tools\miniconda3\Scripts;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenJDK\openjdk-8u275-b01\bin;C:\Program Files\WireGuard\;C:\Program Files\dotnet\;C:\Python27\;C:\Python27\Scripts;;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\LLVM\bin;C:\Program Files\nodejs\;C:\Users\Widget\AppData\Local\Microsoft\WindowsApps;C:\Users\Widget\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Widget\AppData\Roaming\cabal\bin;C:\ProgramData\chocolatey\lib\ghc\tools\ghc-8.10.2\bin;C:\tools\msys64;C:\tools\Anaconda3\condabin;C:\Program Files (x86)\Atmel\Flip 3.4.7\bin;C:\Users\Widget\.dotnet\tools;C:\Program Files\CMake\bin;C:\Users\Widget\.dotnet\tools;C:\Users\Widget\.windows-build-tools\python27\;C:\Users\Widget\bin\platform-tools;C:\Users\Widget\AppData\Roaming\npm;C:\Users\Widget\.platformio\penv\Scripts\" />
+          </envs>
+        </ADDITIONAL_GENERATION_ENVIRONMENT>
+      </configuration>
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e59aabf-63df-402a-b72b-b1b1a808420a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.hpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/serial.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/serial.hpp" afterDir="false" />
+    <list default="true" id="2853ba61-32c8-4e24-a8e2-9507aaabcd00" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platformio.ini" beforeDir="false" afterPath="$PROJECT_DIR$/platformio.ini" afterDir="false" />
     </list>
+    <list id="8e2983df-c4e8-4077-a2fa-01a8dc6c7171" name="Changes by L314-Where" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExternalProjectsData">
-    <projectState path="$PROJECT_DIR$">
-      <ProjectState />
-    </projectState>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
   </component>
+  <component name="EmbeddedSvdWindowState">
+    <option name="columnWidths">
+      <list>
+        <option value="237" />
+        <option value="102" />
+        <option value="1469" />
+      </list>
+    </option>
+    <option name="columnOrder">
+      <list>
+        <option value="Name" />
+        <option value="Value" />
+        <option value="Description" />
+      </list>
+    </option>
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:teensy40-MinGW" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="MacroExpansionManager">
-    <option name="directoryName" value="z6tyelzu" />
+    <option name="directoryName" value="k0015fa8" />
   </component>
-  <component name="MakefileLocalSettings">
-    <option name="projectSyncType">
-      <map>
-        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
-      </map>
-    </option>
-  </component>
-  <component name="ProjectId" id="21elgRQ78u2YyPH7BnaS7T83Nqd" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="21ewDVERJJZnbc6gxmNDqkscuhV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -52,52 +66,67 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="cf.advertisement.text.overridden" value="true" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/makefile" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../msys64/usr/bin/git.exe" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="settings.editor.splitter.proportion" value="0.1546003" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
-  <component name="ReaderModeSettings">
-    <option name="showLigatures" value="false" />
-  </component>
-  <component name="RunManager" selected="Makefile Target.rebuild">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+  <component name="RunManager" selected="PlatformIO.PlatformIO Upload">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Debug" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="widgetpad-firmware" TARGET_NAME="Debug" CONFIG_NAME="teensy40-MinGW">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="rebuild" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile">
-      <makefile filename="C:\Users\Widget\Code\widgetpad-firmware\makefile" target="rebuild" workingDirectory="" arguments="">
-        <envs />
-      </makefile>
+    <configuration name="Production" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="widgetpad-firmware" TARGET_NAME="Production" CONFIG_NAME="teensy40-MinGW">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Z_DUMMY_TARGET" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="widgetpad-firmware" TARGET_NAME="Z_DUMMY_TARGET" CONFIG_NAME="teensy40-MinGW" RUN_TARGET_PROJECT_NAME="widgetpad-firmware" RUN_TARGET_NAME="Z_DUMMY_TARGET">
       <method v="2" />
     </configuration>
-    <configuration name="upload" type="MAKEFILE_TARGET_RUN_CONFIGURATION" factoryName="Makefile">
-      <makefile filename="C:\Users\Widget\Code\widgetpad-firmware\makefile" target="upload" workingDirectory="" arguments="">
-        <envs />
-      </makefile>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlatformIO Debug" type="platformio" factoryName="PlatformIO Debug" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="widgetpad-firmware" TARGET_NAME="Debug" CONFIG_NAME="teensy40-MinGW">
+      <method v="2" />
+    </configuration>
+    <configuration name="PlatformIO Test" type="platformio" factoryName="PlatformIO Test" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="widgetpad-firmware" TARGET_NAME="Production" CONFIG_NAME="teensy40-MinGW">
+      <method v="2" />
+    </configuration>
+    <configuration name="PlatformIO Upload" type="platformio" factoryName="PlatformIO Upload" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="widgetpad-firmware" TARGET_NAME="Production" CONFIG_NAME="teensy40-MinGW">
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Makefile Target.rebuild" />
-      <item itemvalue="Makefile Target.upload" />
+      <item itemvalue="CMake Application.Debug" />
+      <item itemvalue="CMake Application.Production" />
+      <item itemvalue="CMake Application.Z_DUMMY_TARGET" />
+      <item itemvalue="PlatformIO.PlatformIO Debug" />
+      <item itemvalue="PlatformIO.PlatformIO Upload" />
+      <item itemvalue="PlatformIO.PlatformIO Test" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5e59aabf-63df-402a-b72b-b1b1a808420a" name="Changes" comment="" />
-      <created>1638309546444</created>
+      <changelist id="2853ba61-32c8-4e24-a8e2-9507aaabcd00" name="Changes" comment="" />
+      <created>1638314742351</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1638309546444</updated>
-      <workItem from="1638309550698" duration="35000" />
-      <workItem from="1638309601045" duration="895000" />
-      <workItem from="1638310521224" duration="1294000" />
+      <updated>1638314742351</updated>
+      <workItem from="1638314744103" duration="4286000" />
     </task>
     <servers />
   </component>
