@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="widgetpad-firmware" targetName="Z_DUMMY_TARGET" />
+      <config projectName="widgetpad-firmware" targetName="Production" />
+      <config projectName="widgetpad-firmware" targetName="Debug" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="teensy40-MinGW" ENABLED="true" CONFIG_NAME="teensy40" TOOLCHAIN_NAME="MinGW">
+        <ADDITIONAL_GENERATION_ENVIRONMENT>
+          <envs>
+            <env name="PATH" value="C:\Program Files\AdoptOpenJDK\jdk-11.0.10.9-hotspot\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\tools\miniconda3;C:\tools\miniconda3\Library\mingw-w64\bin;C:\tools\miniconda3\Library\usr\bin;C:\tools\miniconda3\Library\bin;C:\tools\miniconda3\Scripts;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\ProgramData\chocolatey\bin;C:\Program Files\OpenJDK\openjdk-8u275-b01\bin;C:\Program Files\WireGuard\;C:\Program Files\dotnet\;C:\Python27\;C:\Python27\Scripts;;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\LLVM\bin;C:\Program Files\nodejs\;C:\Users\Widget\AppData\Local\Microsoft\WindowsApps;C:\Users\Widget\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Widget\AppData\Roaming\cabal\bin;C:\ProgramData\chocolatey\lib\ghc\tools\ghc-8.10.2\bin;C:\tools\msys64;C:\tools\Anaconda3\condabin;C:\Program Files (x86)\Atmel\Flip 3.4.7\bin;C:\Users\Widget\.dotnet\tools;C:\Program Files\CMake\bin;C:\Users\Widget\.dotnet\tools;C:\Users\Widget\.windows-build-tools\python27\;C:\Users\Widget\bin\platform-tools;C:\Users\Widget\AppData\Roaming\npm;C:\Users\Widget\.platformio\penv\Scripts\" />
+          </envs>
+        </ADDITIONAL_GENERATION_ENVIRONMENT>
+      </configuration>
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2853ba61-32c8-4e24-a8e2-9507aaabcd00" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CMakeListsPrivate.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/platformio.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/Arduino.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/AudioStream.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/AudioStream.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/Blink.cc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/Client.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/DMAChannel.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/DMAChannel.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/EventResponder.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/EventResponder.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/HardwareSerial.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/HardwareSerial.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/HardwareSerial1.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/HardwareSerial2.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/HardwareSerial3.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/HardwareSerial4.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/HardwareSerial5.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/HardwareSerial6.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/HardwareSerial7.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/HardwareSerial8.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/IPAddress.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/IPAddress.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/IntervalTimer.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/IntervalTimer.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/Keyboard.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/MIDIUSB.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/Mouse.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/Print.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/Print.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/Printable.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/Server.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/Stream.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/Stream.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/Tone.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/Udp.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/WCharacter.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/WMath.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/WProgram.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/WString.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/WString.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/analog.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/arm_common_tables.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/arm_const_structs.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/arm_math.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/avr/eeprom.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/avr/interrupt.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/avr/io.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/avr/pgmspace.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/avr/power.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/avr/sleep.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/avr/wdt.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/avr_emulation.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/avr_functions.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/binary.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/bootdata.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/clockspeed.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/core_cm7.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/core_cmInstr.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/core_id.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/core_pins.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/debug/printf.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/debugprintf.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/delay.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/digital.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/eeprom.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/elapsedMillis.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/imxrt.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/imxrt1062.ld" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/imxrt1062_t41.ld" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/interrupt.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/keylayouts.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/keylayouts.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/math_helper.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/memcpy-armv7m.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/memset.S" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/new.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/nonstd.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/pgmspace.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/pins_arduino.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/pwm.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/rtc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/serialEvent.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/serialEvent1.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/serialEvent2.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/serialEvent3.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/serialEvent4.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/serialEvent5.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/serialEvent6.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/serialEvent7.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/serialEvent8.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/serialEventUSB1.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/serialEventUSB2.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/startup.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/tempmon.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_audio.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_audio.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_desc.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_desc.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_dev.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_flightsim.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_flightsim.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_inst.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_joystick.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_joystick.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_keyboard.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_keyboard.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_midi.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_midi.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_mouse.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_mouse.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_names.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_rawhid.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_rawhid.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_seremu.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_seremu.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_serial.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_serial.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_serial2.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_serial3.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_touch.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/usb_touch.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/util/atomic.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/util/crc16.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/util/delay.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/util/parity.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/wiring.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/wiring_private.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/teensy4/yield.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_disk/core_id.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_disk/media_internal.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_disk/media_sdcard.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_disk/pauls_ugly_debug.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_disk/usb.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_disk/usb_api.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_disk/usb_api.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_disk/usb_private.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_flightsim/core_id.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_flightsim/usb.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_flightsim/usb_api.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_flightsim/usb_api.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_flightsim/usb_private.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_hid/core_id.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_hid/usb.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_hid/usb_api.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_hid/usb_api.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_hid/usb_private.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_midi/core_id.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_midi/usb.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_midi/usb_api.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_midi/usb_api.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_midi/usb_private.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_rawhid/core_id.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_rawhid/usb.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_rawhid/usb_api.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_rawhid/usb_api.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_rawhid/usb_private.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_serial/core_id.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_serial/usb.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_serial/usb_api.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_serial/usb_api.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_serial/usb_private.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_serial_hid/core_id.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_serial_hid/usb.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_serial_hid/usb_api.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_serial_hid/usb_api.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cores/usb_serial_hid/usb_private.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pad.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/pad.hpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/serial.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/serial.hpp" afterDir="false" />
+    </list>
+    <list id="8e2983df-c4e8-4077-a2fa-01a8dc6c7171" name="Changes by L314-Where" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="EmbeddedSvdWindowState">
+    <option name="columnWidths">
+      <list>
+        <option value="237" />
+        <option value="102" />
+        <option value="1469" />
+      </list>
+    </option>
+    <option name="columnOrder">
+      <list>
+        <option value="Name" />
+        <option value="Value" />
+        <option value="Description" />
+      </list>
+    </option>
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:teensy40-MinGW" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="k0015fa8" />
+  </component>
+  <component name="ProjectId" id="21ewDVERJJZnbc6gxmNDqkscuhV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="cf.advertisement.text.has.clang-format" value="true" />
+    <property name="cf.first.check.clang-format" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="codeWithMe.voiceChat.enabledByDefault" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../msys64/usr/bin/git.exe" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
+  </component>
+  <component name="RunManager" selected="PlatformIO.PlatformIO Upload">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Debug" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="widgetpad-firmware" TARGET_NAME="Debug" CONFIG_NAME="teensy40-MinGW">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Production" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="widgetpad-firmware" TARGET_NAME="Production" CONFIG_NAME="teensy40-MinGW">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Z_DUMMY_TARGET" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="widgetpad-firmware" TARGET_NAME="Z_DUMMY_TARGET" CONFIG_NAME="teensy40-MinGW" RUN_TARGET_PROJECT_NAME="widgetpad-firmware" RUN_TARGET_NAME="Z_DUMMY_TARGET">
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlatformIO Debug" type="platformio" factoryName="PlatformIO Debug" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="widgetpad-firmware" TARGET_NAME="Debug" CONFIG_NAME="teensy40-MinGW">
+      <method v="2" />
+    </configuration>
+    <configuration name="PlatformIO Test" type="platformio" factoryName="PlatformIO Test" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="widgetpad-firmware" TARGET_NAME="Production" CONFIG_NAME="teensy40-MinGW">
+      <method v="2" />
+    </configuration>
+    <configuration name="PlatformIO Upload" type="platformio" factoryName="PlatformIO Upload" nameIsGenerated="true" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="widgetpad-firmware" TARGET_NAME="Production" CONFIG_NAME="teensy40-MinGW">
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.Debug" />
+      <item itemvalue="CMake Application.Production" />
+      <item itemvalue="CMake Application.Z_DUMMY_TARGET" />
+      <item itemvalue="PlatformIO.PlatformIO Debug" />
+      <item itemvalue="PlatformIO.PlatformIO Upload" />
+      <item itemvalue="PlatformIO.PlatformIO Test" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2853ba61-32c8-4e24-a8e2-9507aaabcd00" name="Changes" comment="" />
+      <created>1638314742351</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638314742351</updated>
+      <workItem from="1638314744103" duration="8421000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

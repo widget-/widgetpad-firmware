@@ -1,8 +1,9 @@
 # build
 .vsteensy/**
 .vscode/**
-makefile
 .idea/**
+.pio/**
+makefile
 
 # dependency files
 *.d
