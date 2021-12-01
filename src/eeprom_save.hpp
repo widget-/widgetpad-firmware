@@ -37,8 +37,8 @@
 */
 struct EepromStructure {
     uint8_t configVersion = CONFIG_VERSION;
-    uint8_t numberOfPanels = NUMBER_OF_PANELS;
-    Panel panels[NUMBER_OF_PANELS];
+    uint8_t numberOfPanels = PANELS.size();
+//    Panel panels[NUMBER_OF_PANELS];
 };
 
 bool loadEeprom() {
@@ -55,13 +55,13 @@ bool loadEeprom() {
 }
 
 void storeEeprom() {
-    EepromStructure eeprom = EepromStructure();
-    eeprom.configVersion = CONFIG_VERSION;
-    eeprom.numberOfPanels = NUMBER_OF_PANELS;
-    for (uint8_t i = 0; i < NUMBER_OF_PANELS; i++) {
-        eeprom.panels[i] = PANELS[i];
-    }
-    EEPROM.put(0, eeprom);
+//    EepromStructure eeprom = EepromStructure();
+//    eeprom.configVersion = CONFIG_VERSION;
+//    eeprom.numberOfPanels = NUMBER_OF_PANELS;
+//    for (uint8_t i = 0; i < NUMBER_OF_PANELS; i++) {
+//        eeprom.panels[i] = PANELS[i];
+//    }
+//    EEPROM.put(0, eeprom);
 }
 
 void clearEeprom() {

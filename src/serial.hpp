@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <array>
+#include <vector>
 
 #include "ArduinoJson.h"
 
@@ -45,9 +46,9 @@ void printFps() {
 
 void printThresholds() {
   Serial.print("t ");
-  for (uint8_t panel = 0; panel < NUMBER_OF_PANELS; panel++) {
-    for (uint8_t sensor = 0; sensor < (sizeof PANELS[panel].sensors / sizeof PANELS[panel].sensors[0]); sensor++) {
-      Serial.print(PANELS[panel].sensors[0].threshold);
+  for (Panel const &panel : PANELS) {
+    for (size_t sensor = 0; sensor < (sizeof panel.sensors / sizeof panel.sensors[0]); sensor++) {
+      Serial.print(panel.sensors[0].threshold);
       Serial.print(' ');
     }
     Serial.print("; ");
@@ -57,7 +58,7 @@ void printThresholds() {
 
 void printButtons() {
   Serial.print("b ");
-  for (uint8_t button = 0; button < NUMBER_OF_BUTTONS; button++) {
+  for (uint8_t button = 0; button < BUTTONS.size(); button++) {
     Serial.print(BUTTONS[button].pressed ? "1" : "0");
     Serial.print(' ');
   }
@@ -84,7 +85,7 @@ void printValues() {
 
 void serialDebugPanels() {
   std::ostringstream ret;
-  for (uint8_t panelIndex = 0; panelIndex < NUMBER_OF_PANELS; panelIndex++) {
+  for (uint8_t panelIndex = 0; panelIndex < PANELS.size(); panelIndex++) {
     Panel panel = PANELS[panelIndex];
     ret << "Panel " << int(panelIndex) << ":" << std::endl;
       ret << "    gamepadButton: " << (int)panel.gamepadButton << std::endl;

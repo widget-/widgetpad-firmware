@@ -10,9 +10,9 @@
 #define WP_CONFIG
 
 #include <cstdint>
+#include <vector>
 
 #include "Arduino.h"
-#include "nlohmann/json.hpp"
 
 // #define JOYSTICK_SIZE 64 // override Teensy joystick
 
@@ -33,7 +33,7 @@ struct Panel {
     uint8_t statusLedPin;
     uint8_t ledOrder;
     bool pressed;
-    Sensor sensors[SENSORS_PER_PANEL];
+    std::vector<Sensor> sensors;
 };
 
 struct DigitalButton {
@@ -44,10 +44,7 @@ struct DigitalButton {
 
 // Default panel configuration
 
-// Be sure to set SENSORS_PER_PANEL up above with the correct
-// number of sensors per panel
-
-Panel PANELS[] = {
+std::vector<Panel> PANELS = {
     { // Left arrow
         3,     // stepOrder
         1,     // gamepadButton
@@ -111,7 +108,7 @@ Panel PANELS[] = {
     }, 
 };
 
-DigitalButton BUTTONS[] = {
+std::vector<DigitalButton> BUTTONS = {
     { // Left
         5,   // gamepadButton
         7,   // teensyPin
@@ -128,18 +125,12 @@ DigitalButton BUTTONS[] = {
 };
 
 
-// Array length macro shamelessly stolen from https://stackoverflow.com/a/4415646
-#define ARRAY_LENGTH(x) ((sizeof(x)/sizeof(0[x])) / ((size_t)(!(sizeof(x) % sizeof(0[x])))))
-
-
 // LEDs are not supported yet:
 // #define LED_PIN 10
 // #define LEDS_PER_PAD 32
 // #define LED_COUNT LEDS_PER_PAD*len(PANELS)
 #define SERIAL_BAUD_RATE 2000000
 
-#define NUMBER_OF_PANELS (ARRAY_LENGTH(PANELS))
-#define NUMBER_OF_BUTTONS (ARRAY_LENGTH(BUTTONS))
 #define INVERT_BUTTON_LOGIC true // true if buttons connect to ground, false if to +VCC
 
 // #define SHOW_STATUS_LEDS // uncomment if status LEDs are wired up
