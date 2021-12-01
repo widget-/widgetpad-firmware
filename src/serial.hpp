@@ -17,11 +17,18 @@
 #include <string>
 #include <array>
 
+#include "ArduinoJson.h"
+
 #include "config.hpp"
 #include "eeprom_save.hpp"
-#include "util.hpp"
+// #include "util.hpp"
 
-#define READ_BUFFER_SIZE 256
+const uint32_t READ_BUFFER_SIZE = 256;
+const uint32_t JSON_BUFFER_SIZE = 10240;
+
+const char MESSAGE_PANELS[] = "getPanels";
+const char MESSAGE_FPS[] = "getFPS";
+const char MESSAGE_CONFIG[] = "getConfig";
 
 uint32_t frames = 0;
 size_t bytesRead;
@@ -58,15 +65,21 @@ void printButtons() {
 }
 
 void printValues() {
-  Serial.print("v ");
-  for (Panel panel : PANELS) {
-    for (Sensor sensor : panel.sensors) {
-      Serial.print(sensor.value);
-      Serial.print(' ');
+    DynamicJsonDocument doc(JSON_BUFFER_SIZE);
+
+    doc["message"] = MESSAGE_PANELS;
+    JsonArray panelsJson = doc.createNestedArray("data");
+    for (Panel panel : PANELS) {
+        JsonArray panelJson = panelsJson.createNestedArray();
+        for (Sensor sensor: panel.sensors) {
+            JsonObject sensorJson = panelJson.createNestedObject();
+            sensorJson["value"] = sensor.value;
+            sensorJson["threshold"] = sensor.threshold;
+        }
     }
-    Serial.print("; ");
-  }
-  Serial.print('\n');
+
+    serializeJsonPretty(doc, Serial);
+    Serial.print('\n');
 }
 
 void serialDebugPanels() {
@@ -149,8 +162,8 @@ void tickSerial() {
       printThresholds();
       break;
     case 'v':
-      printValues();
-      break;
+        printValues();
+        break;
     // case 'T':
     //   writeThreshold(read_buffer);
     //   break;

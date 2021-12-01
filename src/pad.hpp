@@ -6,8 +6,7 @@
  * included LICENSE file.
 */
 
-#ifndef WP_PAD
-#define WP_PAD
+#pragma once
 
 #include <cstdint>
 
@@ -144,9 +143,7 @@ void tickSteps() {
     sendJoystickUpdate = false;
   }
 
-  printValues();
+//  printValues();
 
   delay(1); // limit framerate to ~1000Hz
 }
-
-#endif
