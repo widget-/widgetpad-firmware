@@ -9,7 +9,7 @@ Additionally, it should work for any FSR-based pad such as Bandit's
 Teejusb's [teejusb-pad](https://github.com/teejusb/teejusb-pad), or my upcoming
 budgetpad, conceptually similar to an FSR-modded LTEK.
 
-The firmware was originally based on [Bandit](https://github.com/andlehma)'s
+The firmware was originally based on [Bandit's](https://github.com/andlehma)
 [bttp-firmware](https://github.com/BanditsTerrificTravelPad/bttp-firmware)
 under the "treat my code as whatever you want lmao" license,
 but has since been rewritten.
@@ -29,40 +29,32 @@ See [LICENSE](LICENSE) for full terms.
 This firmware is for the [Teensy 4.0](https://www.pjrc.com/store/teensy40.html)
 or [Teensy 4.1](https://www.pjrc.com/store/teensy41.html)
 
-The following software is needed to build the firmware:
+The firmware is built with PlatformIO. One of the following is required:
 
-* [Arduino IDE](https://www.arduino.cc/en/software)
-* [Teensyduino](https://www.pjrc.com/teensy/teensyduino.html) (latest version
-  recommended)
-
-Teensyduino carries its own version requirement for the Arduino IDE.
-
-The following software may be required, as I haven't tested without it:
-
-* [VS Code](https://code.visualstudio.com/)
-* [Arduino plugin](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-arduino)
-  for VS Code
+* [VS Code](https://code.visualstudio.com/) with the [PlatformIO extension](https://marketplace.visualstudio.com/items?itemName=platformio.platformio-ide) (recommeded)
+* [CLion](https://www.jetbrains.com/clion/) with the [PlatformIO plugin](https://plugins.jetbrains.com/plugin/13922-platformio-for-clion)
+* Any other IDE with an appropriate PlatformIO plugin
 
 ## Features
 
 ### Done
 
-* [x] Gamepad button input
-* [x] Arbitrary amount of panels (configured at compile time)
+* [x] Gamepad button HID input
+* [x] Arbitrary amount of panels
 * [x] Runtime-modifiable sensor thresholds over serial
 * [x] Input smoothing
-* [x] Buzzer/speaker "tactile" feedback
+* [x] Buzzer/speaker feedback
 * [x] Multiple sensors per panel
 * [x] 1000Hz polling rate
-* [x] Saving user-set thresholds to onboard EEPROM
+* [x] Saving configuration to onboard EEPROM
 * [x] External button support (for arcade navigation buttons)
+* [x] Convert "Arduino C" to C++
+* [x] Use JSON data over Serial instead of delicate byte sequences
+* [x] Runtime-configurable panel and sensor setup
 
 ### To do
 
-* [ ] "C++ify" the code more
-* [ ] Use JSON data over Serial instead of very specific byte sequences
 * [ ] Write a GUI configuration tool for the runtime settings of the pad
-* [ ] Runtime-configurable panel and sensor setup
 * [ ] Replace serial with HID (with a HID event to toggle serial for sending
       configurations)
 * [ ] Support for LED status indicators (per sensor? per panel?)
@@ -94,7 +86,7 @@ Each `panel` will have one or more `sensors` to decide whether they are
 the `threshold` minus the `threshold gap` is crossed the other direction.
 
 Additionally, `buttons` may be connected, such as the left/right/start/select
-setup found in In The Groove cabinets.
+setup found on In The Groove cabinets.
 
 ### Development
 
@@ -102,7 +94,7 @@ This project was originally written in C but is shifting to C++ and attempting
 to follow `clang-tidy`'s `modernize-*` linter suggestions when possible.
 
 Architecture, code structure, and best practices help from more experienced
-C++11 developers would be greatly appreciated.
+C++17 developers would be greatly appreciated.
 
 Pull requests are of course appreciated but general instruction would also help
 tremendously.
