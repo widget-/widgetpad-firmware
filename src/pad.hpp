@@ -50,13 +50,13 @@ void setJoystickButton(uint8_t button, bool pressed) {
 void setupSteps() {
   Joystick.useManualSend(true);
   
-  for (Panel panel : PANELS) {
+  for (const Panel &panel : *PANELS) {
     for (Sensor sensor : panel.sensors) {
       pinMode(sensor.teensyPin, INPUT);
     }
   }
 
-  for (DigitalButton button : BUTTONS) {
+  for (DigitalButton button : *BUTTONS) {
     uint8_t buttonInputMode = INVERT_BUTTON_LOGIC ? INPUT_PULLUP : INPUT_PULLDOWN;
     pinMode(button.teensyPin, buttonInputMode);
   }
@@ -95,13 +95,14 @@ void tickSteps() {
   #endif
 
   // panels
-  for (Panel &panel : PANELS) {
+  for (Panel &panel : *PANELS) {
     bool pressed = false;
     for (Sensor &sensor : panel.sensors) {
       sensor.value = handleInput(sensor, analogRead(sensor.teensyPin));
       uint32_t threshold = sensor.threshold - (panel.pressed ? PANEL_THRESHOLD_LIFT_GAP : 0);
+      sensor.pressed = sensor.value > threshold;
 
-      pressed = pressed || (sensor.value > threshold);
+      pressed = pressed || sensor.pressed;
     }
     if (panel.pressed != pressed) {
       togglePanel(panel, pressed);
@@ -130,7 +131,7 @@ void tickSteps() {
   smooth_input_position = (smooth_input_position + 1) % ANALOGREAD_SMOOTHING_SAMPLES;
 
   // buttons
-  for (DigitalButton &button : BUTTONS) {
+  for (DigitalButton &button : *BUTTONS) {
     bool pressed = (digitalRead(button.teensyPin) == 1) ^ INVERT_BUTTON_LOGIC;
     if (pressed != button.pressed) {
       button.pressed = pressed;
@@ -142,8 +143,6 @@ void tickSteps() {
     Joystick.send_now();
     sendJoystickUpdate = false;
   }
-
-//  printValues();
 
   delay(1); // limit framerate to ~1000Hz
 }

@@ -16,6 +16,7 @@
 #include "eeprom_save.hpp"
 
 void setup() {
+  loadDefaults();
   setupEeprom();
   setupSteps();
   setupSerial();

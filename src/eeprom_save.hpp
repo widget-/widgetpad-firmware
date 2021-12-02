@@ -37,7 +37,7 @@
 */
 struct EepromStructure {
     uint8_t configVersion = CONFIG_VERSION;
-    uint8_t numberOfPanels = PANELS.size();
+    uint8_t numberOfPanels = PANELS->size();
 //    Panel panels[NUMBER_OF_PANELS];
 };
 
