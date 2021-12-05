@@ -46,15 +46,16 @@ The firmware is built with PlatformIO. One of the following is required:
 * [x] Buzzer/speaker feedback
 * [x] Multiple sensors per panel
 * [x] 1000Hz polling rate
-* [x] Saving configuration to onboard EEPROM
+* [x] ~~Saving configuration to onboard EEPROM~~
 * [x] External button support (for arcade navigation buttons)
 * [x] Convert "Arduino C" to C++
-* [x] Use JSON data over Serial instead of delicate byte sequences
+* [x] Use JSON data over Serial instead of "delicate" byte sequences
 * [x] Runtime-configurable panel and sensor setup
 
 ### To do
 
-* [ ] Write a GUI configuration tool for the runtime settings of the pad
+* [ ] Write a [GUI configuration tool](https://github.com/widget-/widgetpad-configurator) for the runtime settings of the pad
+* Re-do EEPROM saving to use [littlefs](https://github.com/PaulStoffregen/LittleFS/blob/main/src/littlefs/DESIGN.md) for arbitrarily-long config files
 * [ ] Replace serial with HID (with a HID event to toggle serial for sending
       configurations)
 * [ ] Support for LED status indicators (per sensor? per panel?)
@@ -65,6 +66,7 @@ The firmware is built with PlatformIO. One of the following is required:
 * [ ] Extensible LED "programs" for various effects
 * [ ] Piezoelectric/vibration motor tactile feedback
 * [ ] Research what an on-device screen UI could look like
+* [ ] Add multiple profile support
 
 ## Additional information
 

@@ -42,36 +42,23 @@ void printFps() {
     Serial.println(output.str().c_str());
 }
 
-void printValues() {
-    DynamicJsonDocument doc(JSON_BUFFER_SIZE);
+void printValues(bool minified, bool pretty) {
+    DynamicJsonDocument doc = getValuesJson(minified, MESSAGE_VALUES_RESPONSE);
 
-    doc["message"] = MESSAGE_VALUES_RESPONSE;
-    JsonArray panelsJson = doc.createNestedArray("panels");
-    for (const Panel &panel: *PANELS) {
-        JsonArray panelJson = panelsJson.createNestedArray();
-        for (const Sensor &sensor: panel.sensors) {
-            JsonObject sensorJson = panelJson.createNestedObject();
-            sensorJson["value"] = sensor.value;
-            sensorJson["pressed"] = sensor.pressed;
-        }
+    if (pretty) {
+        serializeJsonPretty(doc, Serial);
+    } else {
+        serializeJson(doc, Serial);
     }
-
-    JsonArray buttonsJson = doc.createNestedArray("buttons");
-    for (const DigitalButton &button: *BUTTONS) {
-        JsonObject buttonJson = buttonsJson.createNestedObject();
-        buttonJson["pressed"] = button.pressed;
-    }
-
-    serializeJsonPretty(doc, Serial);
     Serial.print('\n');
 }
 
-void printConfig(bool minified) {
+void printConfig(bool minified, bool pretty) {
     DynamicJsonDocument doc = getConfigJson(minified, MESSAGE_CONFIG_RESPONSE);
-    if (minified) {
-        serializeJson(doc, Serial);
-    } else {
+    if (pretty) {
         serializeJsonPretty(doc, Serial);
+    } else {
+        serializeJson(doc, Serial);
     }
     Serial.println("");
 }
@@ -124,13 +111,14 @@ void tickSerial() {
 
     auto messageType = inputDoc["message"].as<std::string>();
     bool minified = inputDoc.containsKey("minified") && inputDoc["minified"];
+    bool pretty = inputDoc.containsKey("pretty") && inputDoc["pretty"];
 
     if (messageType == MESSAGE_VALUES_REQUEST) {
-        printValues();
+        printValues(minified, pretty);
     } else if (messageType == MESSAGE_FPS_REQUEST) {
         printFps();
     } else if (messageType == MESSAGE_CONFIG_REQUEST) {
-        printConfig(minified);
+        printConfig(minified, pretty);
     } else if (messageType == MESSAGE_CONFIG_UPDATE) {
         setConfigJson(inputDoc);
     }

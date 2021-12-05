@@ -28,7 +28,7 @@ const uint32_t JSON_BUFFER_SIZE = 10240;
 // {"message":"requestValues"}
 // {"message":"requestFPS"}
 // {"message":"requestConfig"}
-// {"message":"requestConfig", "minified": true}
+// {"message":"requestConfig", "minified": false, pretty: true}
 
 template<typename T>
 T getJsonValue(JsonObjectConst o, const std::string& key1, const std::string& key2, T defaultValue) {
@@ -97,6 +97,32 @@ DynamicJsonDocument getConfigJson(bool minified, std::experimental::optional<con
     return doc;
 }
 
+DynamicJsonDocument getValuesJson(bool minified, std::experimental::optional<const char*> message) {
+    DynamicJsonDocument doc(JSON_BUFFER_SIZE);
+
+    if (message) {
+        doc["message"] = message.value();
+    }
+    JsonArray panelsJson = doc.createNestedArray("panels");
+    for (const Panel &panel: *PANELS) {
+        JsonObject panelJson = panelsJson.createNestedObject();
+        JsonArray sensorsJson = panelJson.createNestedArray("sensors");
+        for (const Sensor &sensor: panel.sensors) {
+            JsonObject sensorJson = sensorsJson.createNestedObject();
+            sensorJson[minified ? "v" : "value"] = sensor.value;
+            sensorJson[minified ? "p" : "pressed"] = sensor.pressed;
+        }
+    }
+
+    JsonArray buttonsJson = doc.createNestedArray("buttons");
+    for (const DigitalButton &button: *BUTTONS) {
+        JsonObject buttonJson = buttonsJson.createNestedObject();
+        buttonJson[minified ? "p" : "pressed"] = button.pressed;
+    }
+
+    return doc;
+}
+
 void setConfigJson(DynamicJsonDocument inputDoc) {
     if (inputDoc.containsKey("general")) {
         JsonObjectConst generalDoc = inputDoc["general"];
@@ -123,7 +149,7 @@ void setConfigJson(DynamicJsonDocument inputDoc) {
             std::vector<Sensor> sensors;
             for (JsonObjectConst sensorDoc : sensorsDoc) {
                 Sensor sensor;
-                sensor.threshold = getJsonValue<uint8_t>(sensorDoc, "t", "threshold", 0);
+                sensor.threshold = getJsonValue<uint32_t>(sensorDoc, "t", "threshold", 0);
                 sensor.teensyPin = getJsonValue<uint8_t>(sensorDoc, "pin", "teensyPin", 0);
                 sensors.push_back(sensor);
             }
@@ -145,6 +171,15 @@ void setConfigJson(DynamicJsonDocument inputDoc) {
         }
     }
 
-    // we may have changed pins:
+    if (inputDoc.containsKey("speaker")) {
+        JsonObjectConst speakerDoc = inputDoc["speaker"];
+        SPEAKER = getJsonValue<bool>(speakerDoc, "on", "speakerEnabled", SPEAKER);
+        SPEAKER_PIN = getJsonValue<bool>(speakerDoc, "pin", "speakerPin", SPEAKER_PIN);
+        SPEAKER_BUZZER = getJsonValue<bool>(speakerDoc, "buzzer", "speakerBuzzerMode", SPEAKER_BUZZER);
+        SPEAKER_CLICK_LENGTH = getJsonValue<bool>(speakerDoc, "l", "speakerClickLength", SPEAKER_CLICK_LENGTH);
+        SPEAKER_FREQUENCY = getJsonValue<bool>(speakerDoc, "f", "speakerClickFrequency", SPEAKER_FREQUENCY);
+    }
+
+    // redo pin setup because they may have changed:
     setupSteps();
 }

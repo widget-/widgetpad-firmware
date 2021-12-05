@@ -18,4 +18,6 @@ build/**
 *.lst
 *.elf
 *.a
-cores/
+
+# CLion makes these every time you change PIO's build config
+cmake-*/**
