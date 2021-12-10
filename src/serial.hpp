@@ -42,9 +42,13 @@ void setupSerial() {
 }
 
 void printFps() {
-    std::ostringstream output;
-    output << "fps " << (float) frames * 1000.0 / (float) millis();
-    Serial.println(output.str().c_str());
+    DynamicJsonDocument doc(JSON_BUFFER_SIZE);
+
+    doc["message"] = MESSAGE_FPS_RESPONSE;
+    doc["fps"] = (float) frames * 1000.0 / (float) millis();
+
+    serializeJson(doc, Serial);
+    Serial.print('\n');
 }
 
 void printValues(bool minified, bool pretty) {
@@ -65,7 +69,7 @@ void printConfig(bool minified, bool pretty) {
     } else {
         serializeJson(doc, Serial);
     }
-    Serial.println("");
+    Serial.print('\n');
 }
 
 void printError(DeserializationError err) {
