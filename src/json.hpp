@@ -22,8 +22,6 @@
 
 #include "pad.hpp"
 
-const uint32_t JSON_BUFFER_SIZE = 10240;
-
 // to receive messages from the microcontroller try:
 // {"message":"requestValues"}
 // {"message":"requestFPS"}
@@ -51,8 +49,15 @@ DynamicJsonDocument getConfigJson(bool minified, std::experimental::optional<con
     JsonObject configJson = doc.createNestedObject("general");
 
     configJson[minified ? "gap" : "panelThresholdLiftGap"] = PANEL_THRESHOLD_LIFT_GAP;
+    configJson[minified ? "n" : "name"] = PAD_NAME;
     configJson[minified ? "invButton" : "invertedDigitalButtonLogic"] = INVERT_BUTTON_LOGIC;
     configJson[minified ? "smoothsamples" : "analogReadSmoothingSamples"] = ANALOGREAD_SMOOTHING_SAMPLES;
+#ifdef ARDUINO_TEENSY40
+    configJson[minified ? "mc" : "controller"] = "teensy40";
+#endif
+#ifdef ARDUINO_TEENSY41
+    configJson[minified ? "mc" : "controller"] = "teensy41";
+#endif
 
     JsonArray panelsJson = doc.createNestedArray("panels");
 
@@ -128,6 +133,8 @@ void setConfigJson(DynamicJsonDocument inputDoc) {
         JsonObjectConst generalDoc = inputDoc["general"];
 
         PANEL_THRESHOLD_LIFT_GAP = getJsonValue(generalDoc, "gap", "panelThresholdLiftGap", PANEL_THRESHOLD_LIFT_GAP);
+
+        PAD_NAME = getJsonValue(generalDoc, "n", "name", PAD_NAME);
 
         INVERT_BUTTON_LOGIC = getJsonValue(generalDoc, "invButton", "invertedDigitalButtonLogic", PANEL_THRESHOLD_LIFT_GAP);
 

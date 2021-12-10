@@ -13,6 +13,7 @@
 #include <memory>
 
 #include "Arduino.h"
+#include <LittleFS.h>
 
 const uint8_t ANALOGREAD_SMOOTHING_SAMPLES = 10; // approx 0.5ms latency
 
@@ -126,6 +127,7 @@ void loadDefaults() {
     });
 }
 
+String PAD_NAME = "New Pad";
 
 // LEDs are not supported yet:
 // #define LED_PIN 10
@@ -144,3 +146,6 @@ uint8_t SPEAKER_PIN = 3;
 bool SPEAKER_BUZZER = false; // if using a speaker instead of a buzzer
 uint32_t SPEAKER_CLICK_LENGTH = 1;
 uint32_t SPEAKER_FREQUENCY = 4000; // for non-buzzer speakers
+
+const uint32_t JSON_BUFFER_SIZE = 10240;
+const uint32_t FLASH_FILE_SIZE = 1024 * 512; // 64k minimum for Teensy

@@ -13,11 +13,13 @@
 
 #include "serial.hpp"
 #include "pad.hpp"
+#include "flash.hpp"
 #include "eeprom_save.hpp"
 
 void setup() {
   loadDefaults();
   setupEeprom();
+  setupFlash();
   setupSteps();
   setupSerial();
 }

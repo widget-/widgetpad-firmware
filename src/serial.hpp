@@ -13,6 +13,7 @@
 #include "config.hpp"
 #include "eeprom_save.hpp"
 #include "json.hpp"
+#include "flash.hpp"
 #include <array>
 #include <cstdint>
 #include <iostream>
@@ -27,6 +28,10 @@ const char *MESSAGE_FPS_RESPONSE = "responseFPS";
 const char *MESSAGE_CONFIG_REQUEST = "requestConfig";
 const char *MESSAGE_CONFIG_RESPONSE = "responseConfig";
 const char *MESSAGE_CONFIG_UPDATE = "updateConfig";
+const char *MESSAGE_CONFIG_SAVE_REQUEST = "saveConfigRequest";
+const char *MESSAGE_CONFIG_SAVE_RESPONSE = "saveConfigResponse";
+const char *MESSAGE_CONFIG_LOAD_REQUEST = "loadConfigRequest";
+const char *MESSAGE_CONFIG_LOAD_RESPONSE = "loadConfigResponse";
 const char *MESSAGE_ERROR = "deserializationError";
 
 uint32_t frames = 0;
@@ -69,20 +74,36 @@ void printError(DeserializationError err) {
     doc["message"] = MESSAGE_ERROR;
     doc["err"] = err.c_str();
 
-    serializeJsonPretty(doc, Serial);
+    serializeJson(doc, Serial);
     Serial.print('\n');
 }
 
-void saveToEeprom() {
-    storeEeprom();
-    Serial.print("s ok\n");
+void saveToFlash() {
+    DynamicJsonDocument doc(JSON_BUFFER_SIZE);
+    doc["message"] = MESSAGE_CONFIG_SAVE_RESPONSE;
+    std::experimental::optional<const char*> err = writeConfigToFlash();
+    if (err) {
+        doc["err"] = err.value();
+    } else {
+        doc["value"] = "ok";
+    }
+
+    serializeJson(doc, Serial);
+    Serial.print('\n');
 }
 
-void loadFromEeprom() {
-    if (loadEeprom()) { Serial.print("l ok\n"); }
-    else {
-        Serial.print("l failed\n");
+void loadFromFlash() {
+    DynamicJsonDocument doc(JSON_BUFFER_SIZE);
+    doc["message"] = MESSAGE_CONFIG_LOAD_RESPONSE;
+    std::experimental::optional<const char*> err = loadConfigFromFlash();
+    if (err) {
+        doc["err"] = err.value();
+    } else {
+        doc["value"] = "ok";
     }
+
+    serializeJson(doc, Serial);
+    Serial.print('\n');
 }
 
 void resetEeprom() {
@@ -121,5 +142,9 @@ void tickSerial() {
         printConfig(minified, pretty);
     } else if (messageType == MESSAGE_CONFIG_UPDATE) {
         setConfigJson(inputDoc);
+    }else if (messageType == MESSAGE_CONFIG_SAVE_REQUEST) {
+        saveToFlash();
+    }else if (messageType == MESSAGE_CONFIG_LOAD_REQUEST) {
+        loadFromFlash();
     }
 }
